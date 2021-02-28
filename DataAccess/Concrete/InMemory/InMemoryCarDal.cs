@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car{CarId=1,BrandId=1,ColorId=4,DailyPrice= 150,ModelYear="1950",Description="Antika araba"},
-                new Car{CarId=2,BrandId=2,ColorId=47,DailyPrice= 250,ModelYear="1947",Description="Antika araba"},
-                new Car{CarId=3,BrandId=2,ColorId=7,DailyPrice= 350,ModelYear="2010",Description="Otomatik vites"},
-                new Car{CarId=4,BrandId=1,ColorId=5,DailyPrice= 500,ModelYear="2021",Description="Otomatik vites"},
-                new Car{CarId=5,BrandId=1,ColorId=6,DailyPrice= 240,ModelYear="2000",Description="Manuel vites"},
+                new Car{CarId=1,BrandId=1,ColorId=4,DailyPrice= 150,ModelYear=1950,Description="Antika araba"},
+                new Car{CarId=2,BrandId=2,ColorId=47,DailyPrice= 250,ModelYear=1945,Description="Antika araba"},
+                new Car{CarId=3,BrandId=2,ColorId=7,DailyPrice= 350,ModelYear=2010,Description="Otomatik vites"},
+                new Car{CarId=4,BrandId=1,ColorId=5,DailyPrice= 500,ModelYear=2021,Description="Otomatik vites"},
+                new Car{CarId=5,BrandId=1,ColorId=6,DailyPrice= 240,ModelYear=2000,Description="Manuel vites"},
             };
         }
         public void Add(Car car)
@@ -55,6 +56,11 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public List<Car> GetById()
+        {
+            throw new NotImplementedException();
+        }             
+
+        public List<CarDetailDto> GetCarDetailDtos(Expression<Func<Car, bool>> filter = null)
         {
             throw new NotImplementedException();
         }

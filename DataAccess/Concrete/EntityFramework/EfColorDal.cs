@@ -8,10 +8,11 @@ using Entities.Concrete;
 using Color = Entities.Concrete.Color;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using Core.DataAccess.EntityFramework;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfColorDal : IColorDal
+    public class EfColorDal : EfEntityRepositoryBase<Color, CarRentalContext> , IColorDal
     {
         public void Add(Color entity)
         {
